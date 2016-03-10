@@ -1,0 +1,110 @@
+.header-container {
+    width: 100%;
+    height: 55px;
+    background: #F5F5F5;
+    position: relative;
+    padding-top: 1em;
+    border-bottom: 1px solid #E5E5E5;
+    text-decoration: none;
+    color: #333;
+    line-height: 20px;
+}
+
+.header-title {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+}
+
+.header-logo {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    border: 2px solid purple;
+    float: left;
+    width: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
+    text-align: center;
+
+}
+
+.login-button {
+
+}
+
+.jumbotron {
+    border-bottom: 1px solid black;
+    height: 500px;
+}
+
+.jumbo-text{
+    margin-left: 15% auto;
+    font-size: 3em;
+    padding-top: 1em;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.jumbo-sub-text {
+    border: 1px solid red;
+    display: block;
+    font-size: .5em;
+    padding-top: 1em;
+    margin-top: 15px;
+}
+
+.signup-form {
+    float: right;
+    padding-right: 20%;
+    display: inline-block;
+}
+
+/*Currently affecting all href links on the page*/
+.left-nav-item a:link {
+    text-decoration: none;
+    color: #333;
+    font:13px / 1.4 Helvetica, arial, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/*after link has been click it stays the same*/
+.left-nav-item a:visited {
+    color: #333;
+}
+
+/*Hovers*/
+.left-nav-item a:hover {
+    color: #51a7e8;
+}
+
+
+.header-logo:hover {
+    color: #51a7e8;
+}
+
+/*When you click the search input box*/
+
+.header-nav-item:hover {
+    color: #51a7e8;
+}
+
+.left-nav-item {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.right-nav-item {
+    display: inline-block;
+    padding: .2em;
+}
+
+.header-nav-left {
+    margin-left: 28em;
+    margin-top: 1em;
+}
+
+.header-nav-right {
+    float:right;
+    margin-top: -1.8em;
+    margin-right: .8em;
+}

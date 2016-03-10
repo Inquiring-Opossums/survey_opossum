@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
+  <!-- <head>
     <link type="text/css" rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="style.css">
     <title>Inquiring Opposum </title>
   </head>
-  <body>
+  -->
     <header>
         <div class="header-container">
-              <div class="header-logo"> IP </div>
+              <div class="header-logo"> IO </div>
                   <div class="header-title"> Inquiring Oppossum</div>
               <div>
                   <button class="login-button header-nav-right"> Login
@@ -17,19 +15,16 @@
           </div>
     </header>
     <div class="jumbotron">
-        <div class = "jumbo-text"> Some Cool Stuff about us </div>
-            <div class="signup-form">
+        <div class = "jumbo-text"> Your Survey Service Destination
+            <div class = "jumbo-sub-text"> We have been making  </div>
+            </div>
+            <span class="signup-form">
 
         <h1>New User</h1>
-
-<%= button_to "Sign Up", { :action => "new" }, :method => :get, class: "signupbutton" %>
 
 <%= render 'form' %>
 
 <%= link_to 'Back', authors_path %>
 
-    </div>
+    </span>
 </div>
-
-</body>
-</html>
