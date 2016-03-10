@@ -8,8 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
 
-      redirect_to user_dashboard_path, notice: "You have successfully logged in!"
-      # redirect_to send("#{params[:user_type].downcase}s_path"), notice: "You have successfully logged in!"
+      redirect_to new_survey_path, notice: "You have successfully logged in!"
     else
       flash.now[:alert] = "Login failed: invalid email or password."
       render "new"
