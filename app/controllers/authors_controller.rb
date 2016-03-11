@@ -25,35 +25,30 @@ class AuthorsController < ApplicationController
   # POST /authors.json
   def create
     @author = Author.new(author_params)
-
-    respond_to do |format|
       if @author.save
-        format.html { redirect_to @author, notice: 'Author was successfully created.' }
+        redirect_to new_survey_path, notice: 'Account was successfully created.'
       else
-        format.html { render :new }
+        render :new
       end
-    end
   end
 
   # PATCH/PUT /authors/1
   # PATCH/PUT /authors/1.json
   def update
-    respond_to do |format|
       if @author.update(author_params)
-        format.html { redirect_to @author, notice: 'Author was successfully updated.' }
+        redirect_to @author, notice: 'Author was successfully updated.'
       else
-        format.html { render :edit }
+        render :edit
       end
-    end
   end
 
   # DELETE /authors/1
   # DELETE /authors/1.json
   def destroy
     @author.destroy
-    respond_to do |format|
-      format.html { redirect_to authors_url, notice: 'Author was successfully destroyed.' }
-    end
+
+      redirect_to authors_url, notice: 'Author was successfully destroyed.'
+
   end
 
   private
