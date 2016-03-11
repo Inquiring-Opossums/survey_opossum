@@ -21,13 +21,17 @@
   </div>
   <div class="field">
     <%= f.label :password %><br>
+<<<<<<< HEAD
     <%= f.text_field :password %>
+=======
+    <%= f.text_field :password_digest %>
+>>>>>>> bda0d1e5bdcf58affd5fff713d726965e44d6677
   </div>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :avatar %><br>
     <%= f.text_field :avatar %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  </div> -->
+  <div class="actions button">
+    <%= f.submit("Create Account") %>
   </div>
 <% end %>

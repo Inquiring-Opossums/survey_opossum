@@ -1,0 +1,136 @@
+.header-container {
+    width: 100%;
+    height: 55px;
+    background: #F5F5F5;
+    position: relative;
+    padding-top: 1em;
+    border-bottom: 1px solid #E5E5E5;
+    text-decoration: none;
+    color: #333;
+    line-height: 20px;
+}
+
+.header-title {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+}
+
+.header-logo {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    border: 2px solid rgb(104, 83, 205);
+    float: left;
+    width: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
+    text-align: center;
+
+}
+
+$backgroundpurple: rgb(104, 83, 205);
+$trellogreen: rgb(75, 192, 103);
+$githubblue: #51a7e8;
+
+button {
+    background: #97bea1;
+}
+
+h1 {
+    color:  rgb(95, 208, 103);
+    padding-bottom: .5em;
+    padding-top: .2em;
+}
+
+.jumbotron {
+    border-bottom: 1px solid black;
+    height: 400px;
+    background: rgb(104, 83, 205);
+    padding-right: 10%;
+    padding-left: 5%;
+}
+
+.jumbo-text{
+    margin-top: 3em;
+    width: 18em;
+    margin-left: 15% auto;
+    font-size: 3em;
+    color: #EEE;
+    //padding-top: 1em;
+    // border: 1px solid black;
+    display: inline-block;
+}
+input{
+    width: 300px;
+    border: 1.5px solid black;
+    height: 25px;
+    border-radius: 3px;
+}
+
+input:focus {
+
+    border: 2px solid rgb(75, 192, 103);
+}
+
+.field{
+    font-size: 1.2em;
+    color: #eee;
+}
+.jumbo-sub-text {
+    // border: 1px solid red;
+    display: block;
+    font-size: .5em;
+    padding-top: 1em;
+    margin-top: 2em;
+}
+
+.signup-form {
+    padding: 4% 5% 1% 5%;
+    margin-top: 2em;
+    float: right;
+    display: inline-block;
+    border: #EEE 1.5px solid;
+    border-top: rgb(95, 208, 103) 21px solid;
+    border-radius: 10px;
+    width: 320px;
+
+}
+.signup-form:hover {
+    background: white;
+
+        .field {
+            color: rgb(104, 83, 205);;
+    }
+}
+
+
+
+.login-button {
+    font-size: 1.2em;
+    padding: .8em;
+}
+
+.login-button:hover {
+    color:#51a7e8;
+}
+
+
+.header-logo:hover {
+    color: #51a7e8;
+}
+
+
+.header-nav-item:hover {
+    color: #51a7e8;
+}
+
+
+.right-nav-item {
+    display: inline-block;
+    padding: .2em;
+}
+
+.header-nav-right {
+    float:right;
+    margin-top: -1.8em;
+    margin-right: .8em;
+}
