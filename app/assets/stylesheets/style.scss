@@ -171,12 +171,28 @@ a {
     text-decoration: none;
 }
 
-
 a:hover {
     color:#51a7e8;
     background-color: #F5F5F5;
 }
 
+.survey-form  {
+    width: 80%;
+    max-width: 500px;
+    min-width: 300px;
+    padding: 2em;
+    margin-left: 3em;
+    margin-right: 10% auto;
+    color: black;
+}
+
+#survey_description {
+    width: 80%;
+}
+
+label {
+    color: #222;
+}
 
 .header-logo:hover {
     color: #51a7e8;
