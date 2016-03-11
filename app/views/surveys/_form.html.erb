@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :author_id %><br>
-    <%= f.number_field :author_id %>
+    <%= f.hidden_field :author_id, :value => session[:user_id] %>
   </div>
   <div class="field">
     <%= f.label :name %><br>

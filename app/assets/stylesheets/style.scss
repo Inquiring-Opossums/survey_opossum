@@ -63,7 +63,6 @@ h1 {
 }
 
 .column-right {
-    border: 1px solid black;
     width: 30%;
     float: right;
     margin-top: -28em;
@@ -71,7 +70,6 @@ h1 {
 }
 
 .column-left {
-    border: 1px solid red;
     max-width: 650px;
     height: 390px;
 
@@ -106,7 +104,6 @@ input:focus {
     margin-top: 2em;
     float: right;
     display: inline-block;
-    border: #EEE 1.5px solid;
     border-top: rgb(95, 208, 103) 21px solid;
     border-radius: 10px;
     width: 320px;

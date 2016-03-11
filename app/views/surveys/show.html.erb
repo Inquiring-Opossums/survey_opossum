@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <strong>Author:</strong>
@@ -21,4 +21,5 @@
 </p>
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>
+<%= link_to 'Back', surveys_path %> |
+<%= link_to 'Logout', logout_path, method: :delete %>
