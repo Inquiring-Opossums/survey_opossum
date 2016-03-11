@@ -18,7 +18,7 @@
 .header-logo {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.5em;
-    border: 2px solid purple;
+    border: 2px solid rgb(104, 83, 205);
     float: left;
     width: 30px;
     margin-right: 15px;
@@ -27,54 +27,90 @@
 
 }
 
-.login-button {
+$backgroundpurple: rgb(104, 83, 205);
+$trellogreen: rgb(75, 192, 103);
+$githubblue: #51a7e8;
 
+button {
+    background: #97bea1;
+}
+
+h1 {
+    color: rgb(75, 192, 103);
+    padding-bottom: .5em;
+    padding-top: .2em;
 }
 
 .jumbotron {
     border-bottom: 1px solid black;
-    height: 500px;
+    height: 400px;
+    background: rgb(104, 83, 205);
+    padding-right: 10%;
+    padding-left: 5%;
 }
 
 .jumbo-text{
+    margin-top: 3em;
+    width: 18em;
     margin-left: 15% auto;
     font-size: 3em;
-    padding-top: 1em;
-    border: 1px solid black;
+    color: #EEE;
+    //padding-top: 1em;
+    // border: 1px solid black;
     display: inline-block;
 }
+input{
+    width: 300px;
+    border: 1.5px solid black;
+    height: 25px;
+    border-radius: 3px;
+}
 
+input:focus {
+
+    border: 2px solid rgb(75, 192, 103);
+}
+
+.field{
+    font-size: 1.2em;
+    color: #eee;
+}
 .jumbo-sub-text {
-    border: 1px solid red;
+    // border: 1px solid red;
     display: block;
     font-size: .5em;
     padding-top: 1em;
-    margin-top: 15px;
+    margin-top: 2em;
 }
 
 .signup-form {
+    padding: 4% 5% 1% 5%;
+    margin-top: 2em;
     float: right;
-    padding-right: 20%;
     display: inline-block;
+    border: #EEE 1.5px solid;
+    border-top: rgb(75, 192, 103) 21px solid;
+    border-radius: 10px;
+    width: 320px;
+
+}
+.signup-form:hover {
+    background: white;
+
+        .field {
+            color: rgb(104, 83, 205);;
+    }
 }
 
-/*Currently affecting all href links on the page*/
-.left-nav-item a:link {
-    text-decoration: none;
-    color: #333;
-    font:13px / 1.4 Helvetica, arial, sans-serif;
-    font-weight: bold;
-    font-size: 12px;
+
+
+.login-button {
+    font-size: 1.2em;
+    padding: .8em;
 }
 
-/*after link has been click it stays the same*/
-.left-nav-item a:visited {
-    color: #333;
-}
-
-/*Hovers*/
-.left-nav-item a:hover {
-    color: #51a7e8;
+.login-button:hover {
+    color:#51a7e8;
 }
 
 
@@ -82,25 +118,15 @@
     color: #51a7e8;
 }
 
-/*When you click the search input box*/
 
 .header-nav-item:hover {
     color: #51a7e8;
 }
 
-.left-nav-item {
-    display: inline-block;
-    margin-left: 1em;
-}
 
 .right-nav-item {
     display: inline-block;
     padding: .2em;
-}
-
-.header-nav-left {
-    margin-left: 28em;
-    margin-top: 1em;
 }
 
 .header-nav-right {
