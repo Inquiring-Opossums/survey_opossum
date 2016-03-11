@@ -5,27 +5,21 @@
     <title>Inquiring Opposum </title>
   </head>
   -->
-    <header>
-        <div class="header-container">
-              <div class="header-logo"> IO </div>
-                  <div class="header-title"> Inquiring Oppossum</div>
-              <div>
-                  <span class="login-button header-nav-right"> Login
-                </span>
-          </div>
-    </header>
+
     <div class="jumbotron">
+        <div class="column-left">
         <div class = "jumbo-text"> Your Survey Service Destination
             <div class = "jumbo-sub-text"> We have been making awesome surveys for you since 2016. <br> Sign up now and we'll help you create your first survey! </div>
             </div>
+        </div>
+        <div class="column-right"
             <span class="signup-form">
+                <h1>Sign Up!</h1>
 
+    <%= render 'form' %>
 
-        <h1>Sign Up!</h1>
+    <!-- <%= link_to 'Back', authors_path %> -->
 
-<%= render 'form' %>
-
-<!-- <%= link_to 'Back', authors_path %> -->
-
-    </span>
+        </span>
+    </div>
 </div>

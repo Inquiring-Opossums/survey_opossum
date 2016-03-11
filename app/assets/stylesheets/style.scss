@@ -46,7 +46,9 @@ h1 {
     height: 400px;
     background: rgb(104, 83, 205);
     padding-right: 10%;
-    padding-left: 5%;
+    padding-left: 3%;
+    min-width: 750px;
+
 }
 
 .jumbo-text{
@@ -59,8 +61,24 @@ h1 {
     // border: 1px solid black;
     display: inline-block;
 }
+
+.column-right {
+    border: 1px solid black;
+    width: 30%;
+    float: right;
+    margin-top: -28em;
+    z-index: 1;
+}
+
+.column-left {
+    border: 1px solid red;
+    max-width: 650px;
+    height: 390px;
+
+}
+
 input{
-    width: 300px;
+    width: 80%;
     border: 1.5px solid black;
     height: 25px;
     border-radius: 3px;
@@ -68,7 +86,7 @@ input{
 
 input:focus {
 
-    border: 2px solid rgb(75, 192, 103);
+    border: 2px solid $trellogreen;
 }
 
 .field{
@@ -84,7 +102,7 @@ input:focus {
 }
 
 .signup-form {
-    padding: 4% 5% 1% 5%;
+    padding: 4% 5% 0% 5%;
     margin-top: 2em;
     float: right;
     display: inline-block;
@@ -93,12 +111,13 @@ input:focus {
     border-radius: 10px;
     width: 320px;
 
+
 }
 .signup-form:hover {
     background: white;
 
         .field {
-            color: rgb(104, 83, 205);;
+            color: $trellogreen;
     }
 }
 
@@ -133,4 +152,25 @@ input:focus {
     float:right;
     margin-top: -1.8em;
     margin-right: .8em;
+}
+
+@media (max-width: 1100px)    {
+
+    .column-right {
+        margin-top: 2em;
+        width: 620px;
+        margin-left: 5% auto;
+        margin-right: 20% auto;
+        float: left;
+        padding-left: 2em;
+
+    }
+
+    .column-left .jumbotron {
+        height: 300px;
+    }
+    .field {
+        color: $backgroundpurple;
+    }
+
 }
