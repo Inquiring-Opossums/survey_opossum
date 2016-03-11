@@ -8,17 +8,21 @@
     text-decoration: none;
     color: #333;
     line-height: 20px;
+    margin-bottom: 0;
+    min-width: 750px;
 }
 
 .header-title {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.5em;
+    margin-top: .2em;
 }
 
 .header-logo {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.5em;
     border: 2px solid rgb(104, 83, 205);
+    padding: .1em;
     float: left;
     width: 30px;
     margin-right: 15px;
@@ -39,6 +43,7 @@ h1 {
     color:  rgb(95, 208, 103);
     padding-bottom: .5em;
     padding-top: .2em;
+    font-size: 2em;
 }
 
 .jumbotron {
@@ -46,7 +51,10 @@ h1 {
     height: 400px;
     background: rgb(104, 83, 205);
     padding-right: 10%;
-    padding-left: 5%;
+    padding-left: 3%;
+    min-width: 750px;
+    width: 100%;
+
 }
 
 .jumbo-text{
@@ -59,16 +67,34 @@ h1 {
     // border: 1px solid black;
     display: inline-block;
 }
-input{
-    width: 300px;
+
+.column-right {
+    width: 30%;
+    float: right;
+    margin-top: -25em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-right: 5em;
+    z-index: 1;
+}
+
+.column-left {
+    max-width: 650px;
+    height: 390px;
+
+}
+
+input {
+    width: 80%;
     border: 1.5px solid black;
     height: 25px;
     border-radius: 3px;
+    display: inline;
 }
 
 input:focus {
 
-    border: 2px solid rgb(75, 192, 103);
+    border: 2px solid $trellogreen;
 }
 
 .field{
@@ -84,33 +110,71 @@ input:focus {
 }
 
 .signup-form {
-    padding: 4% 5% 1% 5%;
+    padding: 1em 1em;
     margin-top: 2em;
     float: right;
     display: inline-block;
-    border: #EEE 1.5px solid;
     border-top: rgb(95, 208, 103) 21px solid;
     border-radius: 10px;
     width: 320px;
+
 
 }
 .signup-form:hover {
     background: white;
 
         .field {
-            color: rgb(104, 83, 205);;
+            color: $trellogreen;
     }
 }
 
+.login-form {
+    width: 80%;
+    max-width: 500px;
+    min-width: 300px;
+    padding: 2em;
+    // border: 1px solid black;
+    margin-left: 5% auto;
+    margin-right: 5% auto;
+}
 
+#email {
+    margin-left: 4em;
+    margin-bottom: 1em;
+}
+
+#password {
+    margin-bottom: 2em;
+    margin-left: 1.6em;
+}
+#alert {
+    margin-left: 2em;
+    color: red;
+}
+
+.login-title {
+    margin-bottom: 1em;
+}
 
 .login-button {
     font-size: 1.2em;
     padding: .8em;
+    text-decoration: none;
 }
 
-.login-button:hover {
+.login-submit {
+    margin-left: 6.5em;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+a:hover {
     color:#51a7e8;
+    background-color: #F5F5F5;
 }
 
 
@@ -133,4 +197,25 @@ input:focus {
     float:right;
     margin-top: -1.8em;
     margin-right: .8em;
+}
+
+@media (max-width: 1100px)    {
+
+    .column-right {
+        margin-top: 2em;
+        width: 620px;
+        margin-left: 5% auto;
+        margin-right: 20% auto;
+        float: left;
+        padding-left: 2em;
+
+    }
+
+    .column-left .jumbotron {
+        height: 300px;
+    }
+    .field {
+        color: $backgroundpurple;
+    }
+
 }
