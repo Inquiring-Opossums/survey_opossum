@@ -8,6 +8,8 @@
     text-decoration: none;
     color: #333;
     line-height: 20px;
+    margin-bottom: 0;
+    min-width: 750px;
 }
 
 .header-title {
@@ -39,6 +41,7 @@ h1 {
     color:  rgb(95, 208, 103);
     padding-bottom: .5em;
     padding-top: .2em;
+    font-size: 2em;
 }
 
 .jumbotron {
@@ -48,6 +51,7 @@ h1 {
     padding-right: 10%;
     padding-left: 3%;
     min-width: 750px;
+    width: 100%;
 
 }
 
@@ -65,7 +69,10 @@ h1 {
 .column-right {
     width: 30%;
     float: right;
-    margin-top: -28em;
+    margin-top: -25em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-right: 5em;
     z-index: 1;
 }
 
@@ -100,7 +107,7 @@ input:focus {
 }
 
 .signup-form {
-    padding: 4% 5% 0% 5%;
+    padding: 1em 1em;
     margin-top: 2em;
     float: right;
     display: inline-block;
@@ -123,10 +130,16 @@ input:focus {
 .login-button {
     font-size: 1.2em;
     padding: .8em;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
 }
 
-.login-button:hover {
+
+a:hover {
     color:#51a7e8;
+    background-color: #F5F5F5;
 }
 
 
