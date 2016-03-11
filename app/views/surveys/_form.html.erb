@@ -26,6 +26,13 @@
     <%= f.label :categories %><br>
     <%= f.text_field :categories %>
   </div>
+  <%= f.fields_for :questions do |ff| %>
+  	<div class="field">
+  		<%= ff.text_field :question_text, placeholder: "text" %>
+  		<%= ff.text_field :description, placeholder: "description" %>
+  		<%= ff.check_box :_destroy %><span>Delete</span>
+  	</div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
