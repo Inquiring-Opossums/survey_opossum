@@ -158,9 +158,17 @@ input:focus {
 }
 
 .login-button {
-    font-size: 1.2em;
-    padding: .8em;
+    font-size: 1em;
+    padding: .5em;
     text-decoration: none;
+    display: inline-block;
+
+}
+
+.account-button {
+    padding-top: 1.8em;
+    padding-left: 1em;
+    font-size: 1.2em;
 }
 
 .login-submit {
