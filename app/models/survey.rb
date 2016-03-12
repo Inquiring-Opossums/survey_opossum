@@ -7,6 +7,5 @@ class Survey < ActiveRecord::Base
 	    allow_destroy: true
   validates :author, presence: true
   validates :name, presence: true, uniqueness: true
-  validates :category, presence: true
 
 end
