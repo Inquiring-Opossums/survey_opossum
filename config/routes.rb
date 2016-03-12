@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :answers
   root 'authors#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

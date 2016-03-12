@@ -46,7 +46,9 @@ class AuthorsController < ApplicationController
   # DELETE /authors/1.json
   def destroy
     @author.destroy
+
       redirect_to authors_url, notice: 'Author was successfully destroyed.'
+
   end
 
   private

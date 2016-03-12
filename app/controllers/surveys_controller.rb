@@ -15,11 +15,14 @@ class SurveysController < ApplicationController
   # GET /surveys/new
   def new
     @survey = Survey.new
-    @user = Author.find_by_name(params[:name])
+    @survey.questions.build
+    @user = Author.find_by_id(session[:user_id])
+
   end
 
   # GET /surveys/1/edit
   def edit
+    @survey.questions.build
   end
 
   # POST /surveys
@@ -63,6 +66,6 @@ class SurveysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
-      params.require(:survey).permit(:author_id, :name, :description, :categories)
+      params.require(:survey).permit(:author_id, :name, :description, :categories, questions_attributes: [:id, :question_text, :description, :taker_input, :_destroy])
     end
 end

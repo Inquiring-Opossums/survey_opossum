@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    
+
   end
 
   def create
@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-
       redirect_to new_survey_path, notice: "You have successfully logged in!"
     else
       flash[:alert] = "Login failed: invalid email or password."
