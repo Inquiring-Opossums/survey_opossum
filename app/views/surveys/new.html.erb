@@ -1,21 +1,39 @@
+<div class="userRibbon">
+  <h1> Welcome <%= @user.name.capitalize %>!
+  </h1>
+  <span class ="btn" id="newSurBtn">Create New Survey</span>
+  <br>
+  <div class="avatar"> <%= image_tag("avatars/matt.png", size: "100") %> </div>
+  <span class="recentSurveys">
 
-<h1> Welcome <%= @user.name.capitalize %>!</h1>
+  </span>
+</div>
 
-<span class ="btn" id="newSurBtn">This should be a button you click to make the new survey form show up.</span>
-<span class="btn" id="newQBtn">This button makes a new question appear</span>
 
 <span class="survey-form off" id="newSurvey">
+  <br>
 <h1>New Survey</h1>
+<span class="btn off" id="newQBtn">Add Quesiton</span>
 
 <%= render 'form' %>
 </span><!--ends newSurvey-->
 
-<script>
+<!-- <script>
 //I cant figure out where to put this so it works. So I just embedded it in the HTML itself.>
 $("#newSurBtn").on("click", function(){
   console.log("I clicked!");
   $("#newSurvey").removeClass("off");
 });
-</script>
+
+var questionCount =1;
+
+//I cant figure out where to put this so it works. So I just embedded it in the HTML itself.>
+$("#newQBtn").on("click", function(){
+  console.log("I clicked for question " + questionCount);
+  $("#newQuestion").append("<div class='field Question'><input placeholder='text' type='text' name='survey[questions_attributes]["+ questionCount +"][question_text]' id='survey_questions_attributes_" + questionCount + "_question_text'><input placeholder='description' type='text' name='survey[questions_attributes]["+ questionCount +"][description]' id='survey_questions_attributes_"+ questionCount +"_description'><input name='survey[questions_attributes][" + questionCount + "][_destroy]' type='hidden' value='" + questionCount + "'><input type='checkbox' value='1' name='survey[questions_attributes][" + questionCount + "][_destroy]' id='survey_questions_attributes_" + questionCount + "__destroy'><span>Delete</span></div>");
+  questionCount++
+});//end newQbtn click
+
+</script> -->
 
 <%= link_to 'Back', surveys_path %>

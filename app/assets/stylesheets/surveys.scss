@@ -3,11 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //hopefully this is where all the new survey related scss will go:
-.Question{
-  background: #5FD067;
-  border: 2px #ddd solid;
-  border-radius: 5px;
+$backgroundpurple: rgb(104, 83, 205);
+$trellogreen: rgb(75, 192, 103);
+$githubblue: #51a7e8;
+$headerGray: #F5F5F5;
+
+
+.userRibbon{
+  padding: 20px;
+  background: rgb(104, 83, 205);
+  height: 200px;
+  box-sizing: border-box;
 }
+
+.Question{
+  padding: 10px;
+  background: $headerGray;
+  border: 2px $backgroundpurple solid;
+  border-radius: 5px;
+  width: 60%;
+  margin-left:20%;
+  text-align: center;
+}
+
+
 
 #newSurBtn{
 
@@ -18,13 +37,60 @@
 }
 
 .btn{
+  color: #000;
+  margin-top: -5px;
+  display: inline-block;
+  font-size: 1em;
+  text-align: center;
+  vertical-align:middle;
   width: 200px;
-  height: 50px;
-  background: rgb(86, 213, 91);
+  height: 25px;
+  background: #F5F5F5;
+  border: #48398f 2px solid;
+  padding-top: 12px;
+}
+.btn:hover{
+  color: #51a7e8;
+}
+
+.avatar{
+  width:100px;
+  height:100px;
+  background: #51a7e8;
 }
 
 .off{
   display: none;
 }
 
-#newSurvey{}
+// #newSurvey{
+//   margin-top:20%;
+//
+//   .field{
+//       font-size: 1.2em;
+//       color: #000;
+//   }
+// }
+.avatar{
+  border-radius: 50px;
+  margin-left: 30px;
+}
+
+.survey-form{
+  text-align:center;
+
+  form{
+    padding: 10px;
+    background: $headerGray;
+    border: 2px $backgroundpurple solid;
+    border-radius: 5px;
+    width: 60%;
+    margin-left:20%;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  label{
+    color: black;
+  }
+}
