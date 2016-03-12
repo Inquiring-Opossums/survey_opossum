@@ -27,7 +27,7 @@ class AuthorsController < ApplicationController
     @author = Author.new(author_params)
     if !session[:user_id].nil?
       flash[:notice] = "Please logout of current session before creating a new account."
-      render "new"
+      redirect_to root_path
     elsif @author.save
       session[:user_id] = @author.id
       redirect_to new_survey_path, notice: 'Account was successfully created.'
