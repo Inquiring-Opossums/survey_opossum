@@ -6,6 +6,7 @@ $(function(){
 $("#newSurBtn").on("click", function(){
   console.log("I clicked!");
   $("#newSurvey").removeClass("off");
+  $("#newQBtn").removeClass("off");
 });
 
 var questionCount =1;

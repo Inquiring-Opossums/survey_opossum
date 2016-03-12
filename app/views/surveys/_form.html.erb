@@ -1,5 +1,4 @@
 
-
 <%= form_for(@survey) do |f| %>
   <% if @survey.errors.any? %>
     <div id="error_explanation">
@@ -35,8 +34,8 @@
 <%= f.fields_for :questions do |ff| %>
 <div class="question" id="newQuestion">
   	<div class="field">
-  		<%= ff.text_field :question_text, placeholder: "text" %>
-  		<%= ff.text_field :description, placeholder: "description" %>
+  		<%= ff.text_field :question_text, placeholder: "Question text" %>
+  		<%= ff.text_field :description, placeholder: "short description for you only" %>
   		<%= ff.check_box :_destroy %><span>Delete</span>
   	</div>
 </div>

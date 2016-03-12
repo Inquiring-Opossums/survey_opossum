@@ -3,10 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //hopefully this is where all the new survey related scss will go:
+$backgroundpurple: rgb(104, 83, 205);
+$trellogreen: rgb(75, 192, 103);
+$githubblue: #51a7e8;
+
+.userRibbon{
+  background: rgb(104, 83, 205);
+  height: 200px;
+}
+
 .Question{
+  padding: 10px;
   background: #5FD067;
   border: 2px #ddd solid;
   border-radius: 5px;
+  width: 60%;
+  margin-left:20%;
+  text-align: center;
 }
 
 #newSurBtn{
@@ -18,13 +31,36 @@
 }
 
 .btn{
+  display: inline-block;
+  font-size: .7em;
+  text-align: center;
+  vertical-align:middle;
   width: 200px;
-  height: 50px;
+  height: 30px;
   background: rgb(86, 213, 91);
+  border-radius: 10px;
+  border: rgb(68, 167, 72) 2px solid;
+  padding-top: 10px;
+}
+.btn:hover{
+  background: rgb(68, 167, 72);
 }
 
 .off{
   display: none;
 }
 
-#newSurvey{}
+// #newSurvey{
+//   margin-top:20%;
+//
+//   .field{
+//       font-size: 1.2em;
+//       color: #000;
+//   }
+// }
+.survey-form{
+  margin-left: 20%;
+  label{
+    color: black;
+  }
+}
