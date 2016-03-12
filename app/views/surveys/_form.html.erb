@@ -1,3 +1,5 @@
+
+
 <%= form_for(@survey) do |f| %>
   <% if @survey.errors.any? %>
     <div id="error_explanation">
@@ -9,7 +11,10 @@
       <% end %>
       </ul>
     </div>
+
   <% end %>
+
+
 
   <div class="field">
     <%= f.hidden_field :author_id, value: session[:user_id] %>
@@ -26,12 +31,17 @@
     <%= f.label :categories %>
     <%= f.collection_select(:categories, Survey.all, :id, :categories) %>
   </div>
-  <%= f.fields_for :questions do |ff| %>
+
+<%= f.fields_for :questions do |ff| %>
+<div class="question" id="newQuestion">
   	<div class="field">
   		<%= ff.text_field :question_text, placeholder: "text" %>
   		<%= ff.text_field :description, placeholder: "description" %>
   		<%= ff.check_box :_destroy %><span>Delete</span>
   	</div>
+</div>
+
+
   <% end %>
   <div class="actions">
     <%= f.submit %>
