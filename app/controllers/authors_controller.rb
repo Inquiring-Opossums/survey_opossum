@@ -26,11 +26,14 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new(author_params)
       if @author.save
+        session[:user_id] = @author.id
         redirect_to new_survey_path, notice: 'Account was successfully created.'
       else
         render :new
       end
   end
+
+
 
   # PATCH/PUT /authors/1
   # PATCH/PUT /authors/1.json
