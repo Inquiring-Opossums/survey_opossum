@@ -1,13 +1,19 @@
 <div class="userRibbon">
   <h1> Welcome <%= @user.name.capitalize %>!
-  <span class ="btn" id="newSurBtn">Create New Survey</span>
   </h1>
+  <span class ="btn" id="newSurBtn">Create New Survey</span>
+  <br>
+  <div class="avatar"> <%= image_tag("avatars/matt.png", size: "100") %> </div>
+  <span class="recentSurveys">
+
+  </span>
 </div>
 
 
 <span class="survey-form off" id="newSurvey">
-<h1>Create Survey</h1>
-<span class="btn off" id="newQBtn">New Quesiton</span>
+  <br>
+<h1>New Survey</h1>
+<span class="btn off" id="newQBtn">Add Quesiton</span>
 
 <%= render 'form' %>
 </span><!--ends newSurvey-->
