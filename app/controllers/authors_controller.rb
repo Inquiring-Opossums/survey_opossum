@@ -25,12 +25,15 @@ class AuthorsController < ApplicationController
   # POST /authors.json
   def create
     @author = Author.new(author_params)
-      if @author.save
-        session[:user_id] = @author.id
-        redirect_to new_survey_path, notice: 'Account was successfully created.'
-      else
-        render :new
-      end
+    if !session[:user_id].nil?
+      flash[:notice] = "Please logout of current session before creating a new account."
+      redirect_to root_path
+    elsif @author.save
+      session[:user_id] = @author.id
+      redirect_to new_survey_path, notice: 'Account was successfully created.'
+    else
+      render :new
+    end
   end
 
 
