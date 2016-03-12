@@ -4,20 +4,22 @@ class SurveysController < ApplicationController
   # GET /surveys
   # GET /surveys.json
   def index
-    @surveys = Survey.all
+    if session[:user_id].nil?
+      @surveys = Survey.all
+    else
+      @surveys = Survey.where(author_id: session[:user_id])
+    end
   end
 
   # GET /surveys/1
   # GET /surveys/1.json
   def show
   end
-
   # GET /surveys/new
   def new
     @survey = Survey.new
     @survey.questions.build
     @user = Author.find_by_id(session[:user_id])
-
   end
 
   # GET /surveys/1/edit
