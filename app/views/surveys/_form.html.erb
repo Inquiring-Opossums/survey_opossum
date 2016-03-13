@@ -13,8 +13,6 @@
 
   <% end %>
 
-
-
   <div class="field">
     <%= f.hidden_field :author_id, value: session[:user_id] %>
   </div>
@@ -37,19 +35,17 @@
   </div>
 
 
-<div class="field question" id="newQuestion">
+<%= f.fields_for :questions do |ff| %>
+<div class="question" id="newQuestion">
+  	<div class="field">
+  		<%= ff.text_field :question_text, placeholder: "Question text" %>
+  		<%= ff.text_field :description, placeholder: "short description for you only" %>
+  		<%= ff.check_box :_destroy %><span>Delete</span>
+  	</div>
 </div>
-  <!-- <%= f.fields_for :questions do |ff| %>
-  <div class="field question" id="newQuestion">
-    	<div class="field">
-    		<%= ff.text_field :question_text, placeholder: "Question text" %>
-    		<%= ff.text_field :description, placeholder: "short description for you only" %>
-    		<%= ff.check_box :_destroy %><span>Delete</span>
-    	</div>
-  </div>
 
 
-  <% end %> -->
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

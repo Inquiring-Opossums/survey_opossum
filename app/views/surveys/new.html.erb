@@ -13,7 +13,11 @@
 
   </span>
 </div>
-
+<div class="userQuestions">
+  <% @user.questions.each do |q| %>
+    <p><%= q.question_text.to_s %></p>
+  <% end %>
+</div>
 
 <span class="survey-form off" id="newSurvey">
   <br>
