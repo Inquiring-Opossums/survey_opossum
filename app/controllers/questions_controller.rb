@@ -46,7 +46,7 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1.json
   def destroy
     @question.destroy
-    redirect_to questions_url, notice: 'Question was successfully destroyed.' 
+    redirect_to questions_url, notice: 'Question was successfully destroyed.'
   end
 
   private
