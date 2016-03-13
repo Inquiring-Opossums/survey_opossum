@@ -12,8 +12,11 @@ $headerGray: #F5F5F5;
 .userRibbon{
   padding: 20px;
   background: rgb(104, 83, 205);
-  height: 200px;
+  height: 225px;
   box-sizing: border-box;
+  .avatar{
+    margin-left: 40px;
+  }
 }
 
 .Question{
@@ -53,12 +56,6 @@ $headerGray: #F5F5F5;
   color: #51a7e8;
 }
 
-.avatar{
-  width:100px;
-  height:100px;
-  background: #51a7e8;
-}
-
 .off{
   display: none;
 }
@@ -71,9 +68,8 @@ $headerGray: #F5F5F5;
 //       color: #000;
 //   }
 // }
-.avatar{
-  border-radius: 50px;
-  margin-left: 30px;
+.btnBank{
+  margin-left: 5%;
 }
 
 .survey-form{
@@ -84,8 +80,7 @@ $headerGray: #F5F5F5;
     background: $headerGray;
     border: 2px $backgroundpurple solid;
     border-radius: 5px;
-    width: 60%;
-    margin-left:20%;
+    width: 100%;
     margin-top: 20px;
     text-align: center;
   }
