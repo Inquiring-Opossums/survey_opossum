@@ -24,7 +24,11 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1/edit
   def edit
-    @survey.questions.build
+    if @survey.published? == true
+      redirect_to :back, notice: 'You cannot edit published surveys'
+    else
+      @survey.questions.build
+    end
   end
 
   # POST /surveys
@@ -56,6 +60,12 @@ class SurveysController < ApplicationController
     redirect_to surveys_url, notice: 'Survey was successfully destroyed.'
   end
 
+  def published
+    @survey = Survey.find(params[:survey_id])
+    @survey.update_attributes(published: true)
+    redirect_to survey_path(@survey)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
@@ -68,6 +78,6 @@ class SurveysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
-      params.require(:survey).permit(:author_id, :name, :description, :categories, questions_attributes: [:id, :question_text, :description, :taker_input, :_destroy])
+      params.require(:survey).permit(:author_id, :name, :description, :categories, :published, questions_attributes: [:id, :question_text, :description, :taker_input, :_destroy])
     end
 end
