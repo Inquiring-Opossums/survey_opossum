@@ -24,7 +24,11 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1/edit
   def edit
-    @survey.questions.build
+    if @survey.published? == true
+      redirect_to surveys_path, notice: 'You cannot edit published surveys'
+    else
+      @survey.questions.build
+    end
   end
 
   # POST /surveys
