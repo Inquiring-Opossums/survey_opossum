@@ -19,6 +19,14 @@
   <strong>Categories:</strong>
   <%= @survey.categories %>
 </p>
+<p>
+<% @survey.questions.each_with_index do |x, i|%>
+  <p>Question #<%=i+1%></p>
+  <p><%= x.question_text%></p>
+  <p><%= x.description%></p>
+<%end%>
+</p>
+
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>
