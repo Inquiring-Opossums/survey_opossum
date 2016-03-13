@@ -19,6 +19,15 @@
     <%= f.hidden_field :author_id, value: session[:user_id] %>
   </div>
   <div class="field">
+    <%= f.label :categories %>
+    <%= f.select :categories, Survey.pluck(:categories), include_blank: true %>
+  </div>
+  <!-- We need a button here that if clicked   hides the categories above and displays this text field below -->
+  <div class="field">
+    <%= f.label :categories %>
+    <%= f.text_field :categories %>
+  </div>
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -26,10 +35,7 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :categories %>
-    <%= f.collection_select(:categories, Survey.all, :id, :categories) %>
-  </div>
+
 
 <%= f.fields_for :questions do |ff| %>
 <div class="question" id="newQuestion">
