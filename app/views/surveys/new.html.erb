@@ -3,13 +3,14 @@
   </h1>
   <span class="userBtnBank">
     <span class ="btn" id="newSurBtn">Create New Survey</span>
-    <span class ="btn" id="mySurveysBtn"><%= link_to 'All My Surveys', surveys_path %></span>
+    <!-- <a href="/surveys"><span class ="btn" id="mySurveysBtn"><%= link_to 'All My Surveys', surveys_path %></span></a> -->
+    <a href="/surveys"><span class ="btn">All My Surveys</span></a>
     <span class ="btn" id="another">Another button</span>
     <span class ="btn" id="onemore">one more!</span>
   </span>
   <br>
-  <span class="ribbonRow2">
-    <div class="avatar"> <%= image_tag("avatars/matt.png", size: "150") %> </div>
+  <div class="avatar"> <%= image_tag("avatars/matt.png", size: "150") %> </div>
+  <span class="ribbonRow2 off">
       <span class="lastFiveUserSurveys">
         <% lastfive = @user.surveys.last(5) %>
         <% lastfivenames = [] %>
@@ -22,7 +23,8 @@
           </ul>
           <% end %>
       </span>
-  </span>
+      <span class="btn"> More>> </span>
+  </span><!--end ribbon row 2-->
 </div>
 
 <!-- <div class="userQuestions">
@@ -33,7 +35,7 @@
 
 <span class="survey-form off" id="newSurvey">
   <br>
-<h1>New Survey</h1>
+<h1 style="text-align: center;">New Survey</h1>
 
 
 <%= render 'form' %>

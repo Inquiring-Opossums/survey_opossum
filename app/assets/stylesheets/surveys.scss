@@ -32,10 +32,8 @@ $headerGray: #F5F5F5;
   width: 10%;
   float: left;
 }
-
-
 .newQR{
-  margin-top: -25px;
+  margin-top: -47px;
   width: 20px;
   float: right;
   border-radius: 30px;
@@ -44,12 +42,14 @@ $headerGray: #F5F5F5;
   }
   .fa-caret-down{
     color: rgb(104, 83, 205);
+    margin-left: 4px;
   }
   .fa-caret-up{
     color: rgb(104, 83, 205);
+    margin-left: 4px;
   }
   .fa-times:hover{
-    color: #ff7d7d;
+    color: #aa0c0c;
   }
   .fa-caret-down:hover{
     color: rgb(163, 146, 247);
@@ -81,16 +81,6 @@ $headerGray: #F5F5F5;
   text-align: center;
 }
 
-#surveySubmitBtn{
-  margin-top: .5%;
-  margin-left: 30%;
-
-}
-#newQBtn{
-  margin-top: .5%;
-  margin-left: 50%;
-}
-
 .btn{
   color: #000;
   margin-top: -5px;
@@ -106,6 +96,18 @@ $headerGray: #F5F5F5;
 }
 .btn:hover{
   color: #51a7e8;
+}
+
+#surveySubmitBtn{
+  margin-top: .5%;
+  margin-left: 50%;
+  background: #7de093;
+  border: $trellogreen 3px solid;
+}
+
+#newQBtn{
+  margin-top: -5%;
+  margin-left: 30%;
 }
 
 .off{
