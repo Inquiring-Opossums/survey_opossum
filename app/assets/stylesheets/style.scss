@@ -69,6 +69,14 @@ h1 {
     display: inline-block;
 }
 
+.avatar{
+  width:150px;
+  height:150px;
+  background: #51a7e8;
+  overflow:hidden;
+  border-radius: 75px;
+}
+
 .column-right {
     width: 30%;
     float: right;
