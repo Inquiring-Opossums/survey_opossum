@@ -28,8 +28,10 @@
   </div>
   <div class="field">
     <%= f.label :categories %>
-    <%= f.collection_select(:categories, Survey.all, :id, :categories) %>
+    <%= f.collection_select(:categories, Survey.all, :id, :categories, :prompt => "Select a Category") %>
   </div>
+
+
 
 <div class="field question" id="newQuestion">
 </div>

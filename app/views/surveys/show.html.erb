@@ -27,6 +27,8 @@
 <%end%>
 </p>
 
+<%= link_to 'Publish Survey', survey_published_path(@survey), method: :put %> |
+
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>

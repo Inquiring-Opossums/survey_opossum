@@ -3,4 +3,6 @@ class Question < ActiveRecord::Base
   has_many :answers
   validates :question_text, presence: true
   # validates :survey_id, presence: true
+
+  
 end
