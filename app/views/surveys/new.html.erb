@@ -13,6 +13,16 @@
 
   </span>
 </div>
+<div class="lastFiveUserSurveys">
+  <% lastfive = @user.surveys.last(5) %>
+  <% lastfivenames = [] %>
+  <% lastfive.each do |n| %>
+    <% lastfivenames << n.name %>
+    <% end %>
+    <% lastfivenames.each do |n|%>
+    <p><%= n %></p>
+    <% end %>
+</div>
 <div class="userQuestions">
   <% @user.questions.each do |q| %>
     <p><%= q.question_text.to_s %></p>

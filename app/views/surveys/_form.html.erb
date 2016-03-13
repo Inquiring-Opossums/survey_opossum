@@ -20,11 +20,7 @@
     <%= f.label :categories %>
     <%= f.select :categories, Survey.pluck(:categories), include_blank: true %>
   </div>
-  <!-- We need a button here that if clicked   hides the categories above and displays this text field below -->
-  <div class="field">
-    <%= f.label :categories %>
-    <%= f.text_field :categories %>
-  </div>
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
