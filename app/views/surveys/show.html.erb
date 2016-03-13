@@ -1,5 +1,11 @@
 
-
+<p> Published:
+  <% if @survey.published? == false%>
+  No
+  <%else%>
+  Yes
+  <%end%>
+</p>
 <p>
   <strong>Author:</strong>
   <%= @survey.author.name %>
@@ -27,7 +33,11 @@
 <%end%>
 </p>
 
-<%= link_to 'Publish Survey', survey_published_path(@survey), method: :put %> |
+<%if @survey.published? == false%>
+  <%= link_to 'Publish Survey', survey_published_path(@survey), method: :put, :data => {:confirm => 'Are you sure you want to publish this survey? You will not be able to edit it once it is publishe'} %> |
+<%else%>
+  <p>This survey has been published.</p>
+<%end%>
 
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
