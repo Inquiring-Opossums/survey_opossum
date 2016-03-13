@@ -11,6 +11,7 @@ Inquisitive Opossums is a Survey application that allows the user a variety of o
 * Model and query relational databases
 * Create a functional, pleasant and efficient user experience
 * Provide a secure site using authentication and authorization
+* Provide data structure diagram https://www.lucidchart.com/invitations/accept/0e5a3ab9-fe00-4c96-b6df-219367f655fe
 * Generate workflow diagram(enter link here)
 * Push to Heroku https://salty-oasis-50713.herokuapp.com
 * [Our Github Repository](https://github.com/Inquiring-Opossums/survey_opossum.git)
