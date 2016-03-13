@@ -25,7 +25,7 @@ class SurveysController < ApplicationController
   # GET /surveys/1/edit
   def edit
     if @survey.published? == true
-      redirect_to surveys_path, notice: 'You cannot edit published surveys'
+      redirect_to :back, notice: 'You cannot edit published surveys'
     else
       @survey.questions.build
     end
