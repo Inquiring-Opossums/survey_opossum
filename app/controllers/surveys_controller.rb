@@ -66,6 +66,10 @@ class SurveysController < ApplicationController
     redirect_to survey_path(@survey)
   end
 
+  def take
+    @survey = Survey.find(params[:survey_id])
+    @survey.questions.build
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_survey

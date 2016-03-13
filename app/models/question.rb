@@ -4,5 +4,4 @@ class Question < ActiveRecord::Base
   validates :question_text, presence: true
   # validates :survey_id, presence: true
 
-  
 end
