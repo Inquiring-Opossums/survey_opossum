@@ -9,7 +9,9 @@
       <th>Name</th>
       <th>Description</th>
       <th>Categories</th>
+      <% if !session[:user_id].nil?%>
       <th>Published?</th>
+      <%end%>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,6 +23,7 @@
         <td><%= survey.name %></td>
         <td><%= survey.description %></td>
         <td><%= survey.categories %></td>
+        <% if !session[:user_id].nil?%>
         <td><% if survey.published? == false %>
             <p>No</p>
             <% else %>
@@ -29,7 +32,9 @@
         </td>
         <td><%= link_to 'Show', survey %></td>
         <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
-        <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+        <td><%= link_to 'take survey', survey_take_path(survey) %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>
