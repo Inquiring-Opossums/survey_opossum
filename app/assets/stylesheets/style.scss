@@ -129,14 +129,6 @@ input:focus {
 
 }
 
-.signup-form:hover {
-    background: white;
-
-        .field {
-            color: $trellogreen;
-    }
-}
-
 .login-container {
     margin: 2em;
     max-width: 500px;
@@ -218,7 +210,7 @@ a:hover {
     width: 80%;
 }
 
-label {
+.column-right label {
     color: #fff;
 }
 
@@ -254,7 +246,7 @@ label {
         padding-left: 2em;
     }
 
-        label {
+    .column-right label {
             color: rgb(104, 83, 205);
         }
 
