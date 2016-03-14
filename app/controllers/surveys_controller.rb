@@ -67,10 +67,15 @@ class SurveysController < ApplicationController
   end
 
   def take
-    @taker = Taker.create
     @survey = Survey.find(params[:survey_id])
-    @survey.questions.each do |q|
-      q.answers.build
+    if @survey.published? == true
+      @taker = Taker.create
+      @survey = Survey.find(params[:survey_id])
+      @survey.questions.each do |q|
+        q.answers.build
+      end
+    else
+      redirect_to surveys_path, notice: 'This survey has not been published. Get outta here. Go home kid'
     end
   end
   private
