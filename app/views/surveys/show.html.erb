@@ -39,6 +39,8 @@
   <p>This survey has been published.</p>
 <%end%>
 
-
+<%if @survey.published? == false%>
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>
+<% end %>
+<%= link_to 'Back', surveys_path %> |
+<%= link_to 'Destroy', @survey, method: :delete, data: { confirm: 'Are you sure?' } %>
