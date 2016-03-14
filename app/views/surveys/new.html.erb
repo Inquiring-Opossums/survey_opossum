@@ -2,14 +2,14 @@
   <h1> Welcome Back <%= @user.name.capitalize %>!
   </h1>
   <span class="userBtnBank">
-    <span class ="btn" id="newSurBtn">Create New Survey</span>
+    <a href=#><span class ="btn" id="newSurBtn">Create New Survey</span></a>
     <!-- <a href="/surveys"><span class ="btn" id="mySurveysBtn"><%= link_to 'All My Surveys', surveys_path %></span></a> -->
     <a href="/surveys"><span class ="btn">All My Surveys</span></a>
-    <span class ="btn" id="another">Another button</span>
-    <span class ="btn" id="onemore">one more!</span>
+    <a href="#"><span class ="btn" id="another">Another button</span></a>
+    <a href="#"><span class ="btn" id="onemore">one more!</span></a>
   </span>
   <br>
-  <div class="avatar"> <%= image_tag("avatars/matt.png", size: "150") %> </div>
+  <div class="avatar"> <%= image_tag("avatars/GenericUser.png", size: "150") %> </div>
   <span class="ribbonRow2 off">
       <span class="lastFiveUserSurveys">
         <% lastfive = @user.surveys.last(5) %>
@@ -35,12 +35,12 @@
 
 <span class="survey-form off" id="newSurvey">
   <br>
-<h1 style="text-align: center;">New Survey</h1>
+<h1 style="margin-left:45%;">New Survey</h1>
 
 
 <%= render 'form' %>
 </span><!--ends newSurvey-->
-<span class="btn off" id="newQBtn">Add Question</span>
+<a href="#"><span class="btn off" id="newQBtn">Add Question</span></a>
 
 <!-- <script>
 //I cant figure out where to put this so it works. So I just embedded it in the HTML itself.>
@@ -57,5 +57,10 @@ $("#newQBtn").on("click", function(){
   $("#newQuestion").append("<div class='field Question'><input placeholder='text' type='text' name='survey[questions_attributes]["+ questionCount +"][question_text]' id='survey_questions_attributes_" + questionCount + "_question_text'><input placeholder='description' type='text' name='survey[questions_attributes]["+ questionCount +"][description]' id='survey_questions_attributes_"+ questionCount +"_description'><input name='survey[questions_attributes][" + questionCount + "][_destroy]' type='hidden' value='" + questionCount + "'><input type='checkbox' value='1' name='survey[questions_attributes][" + questionCount + "][_destroy]' id='survey_questions_attributes_" + questionCount + "__destroy'><span>Delete</span></div>");
   questionCount++
 });//end newQbtn click
-
 </script> -->
+
+<script>
+$(".fa-times").click(function(){
+  console.log("MOVE UP");
+});//end check click
+</script>
