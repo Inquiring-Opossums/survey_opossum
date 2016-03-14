@@ -53,6 +53,9 @@ class SurveysController < ApplicationController
       render :edit
     end
   end
+  def answers
+    @survey = Survey.find(params[:survey_id])
+  end
 
   # DELETE /surveys/1
   # DELETE /surveys/1.json
@@ -70,11 +73,9 @@ class SurveysController < ApplicationController
   def take
     @survey = Survey.find(params[:survey_id])
     if @survey.published? == true
-      @taker = Taker.create
+      @taker = Taker.new
       @survey = Survey.find(params[:survey_id])
-      @survey.questions.each do |q|
-        q.answers.build
-      end
+      @survey.answers.build
     else
       redirect_to surveys_path, notice: 'This survey has not been published. Get outta here. Go home kid'
     end
