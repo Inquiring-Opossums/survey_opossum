@@ -1,4 +1,4 @@
-# __Inquisitive Opossums__
+# __Inquiring Opossum__
 ## A web application for creating and taking surveys
 ** Description **
 
