@@ -67,8 +67,11 @@ class SurveysController < ApplicationController
   end
 
   def take
+    @taker = Taker.create
     @survey = Survey.find(params[:survey_id])
-    @survey.questions.build
+    @survey.questions.each do |q|
+      q.answers.build
+    end
   end
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -82,6 +85,8 @@ class SurveysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
-      params.require(:survey).permit(:author_id, :name, :description, :categories, :published, questions_attributes: [:id, :question_text, :description, :taker_input, :_destroy])
+      params.require(:survey).permit(:author_id, :name, :description, :categories, :published,
+      questions_attributes: [:id, :question_text, :description, :taker_input, :_destroy,
+      answers_attributes: [:id, :question_id, :taker_id, :answer]])
     end
 end
