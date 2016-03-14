@@ -1,5 +1,5 @@
 class Taker < ActiveRecord::Base
-  has_many_and_belongs_to :survey
+  has_many :surveys
   has_many :answers
 
 end
