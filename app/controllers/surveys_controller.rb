@@ -1,6 +1,7 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :at_least_one_question?, only: [:published]
   # GET /surveys
   # GET /surveys.json
   def index
@@ -87,7 +88,14 @@ class SurveysController < ApplicationController
     def set_user
       @user = Author.find(session[:user_id])
     end
-
+    def at_least_one_question?
+      @survey = Survey.find(params[:survey_id])
+      if @survey.questions.count > 0
+        true
+      else
+        redirect_to surveys_path, notice: "You must have at least one question to publish!"
+      end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
       params.require(:survey).permit(:author_id, :name, :description, :categories, :published,
