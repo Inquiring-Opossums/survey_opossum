@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       put :published
       get :take
       patch :take
+      get :answers
   end
   resources :authors
 

@@ -1,0 +1,31 @@
+
+<br>
+<h1 class="edit-survey-title" style="margin-left: 42%;">Your Surveys</h1>
+<br> <br>
+<table>
+  <thead>
+    <tr>
+      <% @survey.questions.each do |q| %>
+        <th>
+          <%= q.question_text %>
+        </th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <% @survey.answers.each do |answer| %>
+          <td>
+          <%= answer.answer %>
+        </td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<div style="margin-left: 42%;" class="footer">
+<%= link_to 'New Survey', new_survey_path %> |
+<%= link_to 'Logout', logout_path, method: :delete %>
+</div>

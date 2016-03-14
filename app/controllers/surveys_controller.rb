@@ -1,6 +1,7 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :at_least_one_question?, only: [:published]
   # GET /surveys
   # GET /surveys.json
   def index
@@ -52,6 +53,9 @@ class SurveysController < ApplicationController
       render :edit
     end
   end
+  def answers
+    @survey = Survey.find(params[:survey_id])
+  end
 
   # DELETE /surveys/1
   # DELETE /surveys/1.json
@@ -69,11 +73,9 @@ class SurveysController < ApplicationController
   def take
     @survey = Survey.find(params[:survey_id])
     if @survey.published? == true
-      @taker = Taker.create
+      @taker = Taker.new
       @survey = Survey.find(params[:survey_id])
-      @survey.questions.each do |q|
-        q.answers.build
-      end
+      @survey.answers.build
     else
       redirect_to surveys_path, notice: 'This survey has not been published. Get outta here. Go home kid'
     end
@@ -87,7 +89,14 @@ class SurveysController < ApplicationController
     def set_user
       @user = Author.find(session[:user_id])
     end
-
+    def at_least_one_question?
+      @survey = Survey.find(params[:survey_id])
+      if @survey.questions.count > 0
+        true
+      else
+        redirect_to surveys_path, notice: "You must have at least one question to publish!"
+      end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
       params.require(:survey).permit(:author_id, :name, :description, :categories, :published,
