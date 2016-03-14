@@ -30,32 +30,20 @@
       	<div class="field">
           <p><%=ff.object.question_text %></p>
           <p><%=ff.object.description%></p>
-          <% if ff.object.taker_input == "A" %>
-            <%= ff.radio_button :answers, "Yes", :checked => true %><br>
-            <%= label :answers_yes, 'Yes' %><br>
-            <%= ff.radio_button :answers, "No" %><br>
-            <%= label :answers_no, 'No' %><br>
-          <% elsif ff.object.taker_input == "B" %>
-            <%= ff.text_field :answers %>
-          <% else %>
-            <%= ff.text_area :answers %>
+          <%= ff.fields_for :answers do |fff|%>
+            <% if ff.object.taker_input == "A" %>
+              <%= fff.radio_button :answer, "Yes", :checked => true %><br>
+              <%= label :answers_yes, 'Yes' %><br>
+              <%= fff.radio_button :answer, "No" %><br>
+              <%= label :answers_no, 'No' %><br>
+            <% elsif ff.object.taker_input == "B" %>
+              <%= fff.text_field :answer %>
+            <% else %>
+              <%= fff.text_area :answer %>
+            <% end %>
           <% end %>
       	</div>
     </div>
-    <%=ff.fields_for :answers do |fff|%>
-      <div class="field">
-        <%= fff.label :question_id %><br>
-        <%= fff.number_field :question_id %>
-      </div>
-      <div class="field">
-        <%= fff.label :taker_id %><br>
-        <%= fff.number_field :taker_id %>
-      </div>
-      <div class="field">
-        <%= fff.label :answer %><br>
-        <%= fff.text_area :answer %>
-      </div>
-    <% end %>
   <% end %>
   <div class="actions">
     <%= f.submit %>
