@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
+<<<<<<< HEAD
 ruby '2.2.2'
 
+=======
+ruby '2.1.7'
+>>>>>>> 1b16c38002e77d406a170290eaeb7d950ea7213c
 gem 'puma'
 gem 'rails_12factor'
 
