@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
+  before_action :set_survey, only: [:new]
   # GET /answers
   def index
     @answers = Answer.all

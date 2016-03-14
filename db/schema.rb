@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 20160313153842) do
     t.string   "name"
     t.text     "description"
     t.string   "categories"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.boolean  "published"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "published",   default: false
   end
 
   create_table "takers", force: :cascade do |t|

@@ -1,0 +1,63 @@
+
+<%= form_for(@survey) do |f| %>
+  <% if @survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+
+      <ul>
+      <% @survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :author_id, value: session[:user_id] %>
+  </div>
+
+  <div class="field">
+    <p>Survey: <%=f.object.name%></p>
+  </div>
+
+  <div class="field">
+    <p>Description: <%=f.object.description%></p>
+  </div>
+
+  <%= f.fields_for :questions do |ff| %>
+    <div class="question" id="newQuestion">
+      	<div class="field">
+          <p><%=ff.object.question_text %></p>
+          <p><%=ff.object.description%></p>
+          <% if ff.object.taker_input == "A" %>
+            <%= ff.radio_button :answers, "Yes", :checked => true %><br>
+            <%= label :answers_yes, 'Yes' %><br>
+            <%= ff.radio_button :answers, "No" %><br>
+            <%= label :answers_no, 'No' %><br>
+          <% elsif ff.object.taker_input == "B" %>
+            <%= ff.text_field :answers %>
+          <% else %>
+            <%= ff.text_area :answers %>
+          <% end %>
+      	</div>
+    </div>
+    <%=ff.fields_for :answers do |fff|%>
+      <div class="field">
+        <%= fff.label :question_id %><br>
+        <%= fff.number_field :question_id %>
+      </div>
+      <div class="field">
+        <%= fff.label :taker_id %><br>
+        <%= fff.number_field :taker_id %>
+      </div>
+      <div class="field">
+        <%= fff.label :answer %><br>
+        <%= fff.text_area :answer %>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

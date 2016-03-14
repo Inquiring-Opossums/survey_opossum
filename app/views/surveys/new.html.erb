@@ -1,41 +1,46 @@
 <div class="userRibbon">
   <h1> Welcome Back <%= @user.name.capitalize %>!
   </h1>
-  <span class="btnBank">
+  <span class="userBtnBank">
     <span class ="btn" id="newSurBtn">Create New Survey</span>
-    <span class ="btn" id="mySurveysBtn"><%= link_to 'All My Surveys', surveys_path %></span>
+    <!-- <a href="/surveys"><span class ="btn" id="mySurveysBtn"><%= link_to 'All My Surveys', surveys_path %></span></a> -->
+    <a href="/surveys"><span class ="btn">All My Surveys</span></a>
     <span class ="btn" id="another">Another button</span>
     <span class ="btn" id="onemore">one more!</span>
   </span>
   <br>
   <div class="avatar"> <%= image_tag("avatars/matt.png", size: "150") %> </div>
-  <span class="recentSurveys">
+  <span class="ribbonRow2 off">
+      <span class="lastFiveUserSurveys">
+        <% lastfive = @user.surveys.last(5) %>
+        <% lastfivenames = [] %>
+        <% lastfive.each do |n| %>
+          <% lastfivenames << n.name %>
+          <% end %>
+          <% lastfivenames.each do |n|%>
+          <ul>
+          <li><%= n %></li>
+          </ul>
+          <% end %>
+      </span>
+      <span class="btn"> More>> </span>
+  </span><!--end ribbon row 2-->
+</div>
 
-  </span>
-</div>
-<div class="lastFiveUserSurveys">
-  <% lastfive = @user.surveys.last(5) %>
-  <% lastfivenames = [] %>
-  <% lastfive.each do |n| %>
-    <% lastfivenames << n.name %>
-    <% end %>
-    <% lastfivenames.each do |n|%>
-    <p><%= n %></p>
-    <% end %>
-</div>
-<div class="userQuestions">
+<!-- <div class="userQuestions">
   <% @user.questions.each do |q| %>
     <p><%= q.question_text.to_s %></p>
   <% end %>
-</div>
+</div> -->
 
 <span class="survey-form off" id="newSurvey">
   <br>
-<h1>New Survey</h1>
-<span class="btn off" id="newQBtn">Add Question</span>
+<h1 style="text-align: center;">New Survey</h1>
+
 
 <%= render 'form' %>
 </span><!--ends newSurvey-->
+<span class="btn off" id="newQBtn">Add Question</span>
 
 <!-- <script>
 //I cant figure out where to put this so it works. So I just embedded it in the HTML itself.>

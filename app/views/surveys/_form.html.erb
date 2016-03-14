@@ -12,7 +12,7 @@
     </div>
 
   <% end %>
-
+<div class="almostField">
   <div class="field">
     <%= f.hidden_field :author_id, value: session[:user_id] %>
   </div>
@@ -34,15 +34,18 @@
 
   <%= f.fields_for :questions do |ff| %>
     <div class="question" id="newQuestion">
-      	<div class="field">
-          <%= ff.select(:taker_input, options_for_select([['Yes or No', 1], ['Short Answer', 2], ['Long Answer', 3]])) %>
+
+      	<!-- <div class="field">
+          <%= ff.select(:taker_input, options_for_select([['Yes or No', "1"], ['Short Answer', "2"], ['Long Answer', "3"]])) %>
+
       		<%= ff.text_field :question_text, placeholder: "Question text" %>
       		<%= ff.text_field :description, placeholder: "short description for you only" %>
       		<%= ff.check_box :_destroy %><span>Delete</span>
-      	</div>
+      	</div> -->
     </div>
   <% end %>
-  <div class="actions">
+</div>
+  <span class="actions btn" id="surveySubmitBtn">
     <%= f.submit %>
-  </div>
+  </span>
 <% end %>

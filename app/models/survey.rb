@@ -9,5 +9,4 @@ class Survey < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates :categories, presence: true
 
-
 end
