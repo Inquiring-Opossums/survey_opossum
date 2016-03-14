@@ -18,46 +18,35 @@
   </div>
 
   <div class="field">
-    <p>Survey: <%=f.object.name%></p>
+    <p>Survey: <%=@survey.name%></p>
   </div>
 
   <div class="field">
-    <p>Description: <%=f.object.description%></p>
+    <p>Description: <%=@survey.description%></p>
   </div>
-
+  <%= f.hidden_field :taker_id, :value => @taker.id %>
   <%= f.fields_for :questions do |ff| %>
     <div class="question" id="newQuestion">
       	<div class="field">
-          <p><%=ff.object.question_text %></p>
-          <p><%=ff.object.description%></p>
-          <% if ff.object.taker_input == "A" %>
-            <%= ff.radio_button :answers, "Yes", :checked => true %><br>
-            <%= label :answers_yes, 'Yes' %><br>
-            <%= ff.radio_button :answers, "No" %><br>
-            <%= label :answers_no, 'No' %><br>
-          <% elsif ff.object.taker_input == "B" %>
-            <%= ff.text_field :answers %>
-          <% else %>
-            <%= ff.text_area :answers %>
+          <% question = ff.object %>
+          <p><%=question.question_text %></p>
+          <p><%=question.description%></p>
+          <%= ff.fields_for :answers do |fff|%>
+            <% if question.taker_input == "1" %>
+              <%= label :answers_yes, 'Yes' %><br>
+              <%= fff.radio_button :answer, "Yes", :checked => true %><br>
+              <%= label :answers_no, 'No' %><br>
+              <%= fff.radio_button :answer, "No" %><br>
+            <% elsif question.taker_input == "2" %>
+              <%= fff.text_field :answer %>
+            <% else %>
+              <%= fff.text_area :answer %>
+            <% end %>
           <% end %>
       	</div>
     </div>
-    <%=ff.fields_for :answers do |fff|%>
-      <div class="field">
-        <%= fff.label :question_id %><br>
-        <%= fff.number_field :question_id %>
-      </div>
-      <div class="field">
-        <%= fff.label :taker_id %><br>
-        <%= fff.number_field :taker_id %>
-      </div>
-      <div class="field">
-        <%= fff.label :answer %><br>
-        <%= fff.text_area :answer %>
-      </div>
-    <% end %>
   <% end %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit Survey" %>
   </div>
 <% end %>

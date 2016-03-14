@@ -8,5 +8,7 @@ class Survey < ActiveRecord::Base
   validates :author, presence: true
   validates :name, presence: true, uniqueness: true
   validates :categories, presence: true
+  has_many :answers, through: :questions
+  accepts_nested_attributes_for :answers
 
 end

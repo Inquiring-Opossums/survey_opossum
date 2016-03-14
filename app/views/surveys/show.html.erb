@@ -37,8 +37,11 @@
   <%= link_to 'Publish Survey', survey_published_path(@survey), method: :put, :data => {:confirm => 'Are you sure you want to publish this survey? You will not be able to edit it once it is published'} %> |
 <%else%>
   <p>This survey has been published.</p>
+  <p>Here is a link to take the survey:<%= link_to request.original_url + "/take", survey_take_path(@survey)%></p>
 <%end%>
 
-
+<%if @survey.published? == false%>
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>
+<% end %>
+<%= link_to 'Back', surveys_path %> |
+<%= link_to 'Destroy', @survey, method: :delete, data: { confirm: 'Are you sure?' } %>
