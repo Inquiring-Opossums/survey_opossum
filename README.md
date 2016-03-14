@@ -17,7 +17,7 @@ Inquisitive Opossums is a Survey application that allows the user a variety of o
 * [Our Github Repository](https://github.com/Inquiring-Opossums/survey_opossum.git)
 <br>
 
-#Demonstration Video
+Demonstration Video
 (http://img.youtube.com/vi/cq3D0Lwda44/0.jpg)](https://www.youtube.com/watch?v=cq3D0Lwda44)
 
 <br>
