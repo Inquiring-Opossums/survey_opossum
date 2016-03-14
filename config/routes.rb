@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   resources :surveys do
       get :published
       put :published
+      get :take
+      patch :take
   end
   resources :authors
+
 
 
 
