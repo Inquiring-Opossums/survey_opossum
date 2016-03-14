@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 gem 'puma'
+gem 'rails_12factor'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -34,7 +35,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
+  gem "activerecord-postgresql-adapter"
 end
 
 group :development, :test do
