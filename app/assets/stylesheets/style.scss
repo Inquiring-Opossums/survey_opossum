@@ -127,9 +127,8 @@ input:focus {
     border-radius: 10px;
     width: 320px;
 
-
-
 }
+
 .signup-form:hover {
     background: white;
 
@@ -138,20 +137,34 @@ input:focus {
     }
 }
 
+.login-container {
+    margin: 2em;
+    max-width: 500px;
+}
+
 .login-form {
     width: 80%;
     max-width: 500px;
     min-width: 300px;
-    padding: 2em;
-    // border: 1px solid black;
+    padding: 3em;
     margin-left: 5% auto;
     margin-right: 5% auto;
 }
 
+.login-form label {
+    color: rgb(104, 83, 205);
+    margin-top: 15px;
+}
+
+.login-form input {
+    float: right;
+    margin-top:-15px;
+}
+
 #email {
     margin-left: 4em;
-    margin-bottom: 1em;
-}
+    border: 1px solid black;
+    }
 
 #password {
     margin-bottom: 2em;
@@ -163,7 +176,8 @@ input:focus {
 }
 
 .login-title {
-    margin-bottom: 1em;
+    margin-top: 2em;
+
 }
 
 .login-button {
@@ -180,10 +194,6 @@ input:focus {
     font-size: 1.2em;
 }
 
-.login-submit {
-    margin-left: 6.5em;
-    width: 100%;
-}
 
 a {
     text-decoration: none;
@@ -242,14 +252,17 @@ label {
         margin-right: 20% auto;
         float: left;
         padding-left: 2em;
-
     }
+
+        label {
+            color: rgb(104, 83, 205);
+        }
 
     .column-left .jumbotron {
         height: 300px;
+
     }
-    .field {
-        color: $backgroundpurple;
-    }
+
+
 
 }
