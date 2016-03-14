@@ -37,7 +37,12 @@ group :production do
   gem 'pg'
 end
 
-group :development, :test do
+group :development do
+  gem 'byebug'
+  gem 'sqlite3'
+end
+
+group :test do
   gem 'byebug'
   gem 'sqlite3'
 end
