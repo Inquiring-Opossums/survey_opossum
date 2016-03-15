@@ -10,6 +10,11 @@
     line-height: 20px;
     margin-bottom: 0;
     min-width: 750px;
+
+    a:hover {
+        color:#51a7e8;
+        background-color: #F5F5F5;
+    }
 }
 
 .header-title {
@@ -43,7 +48,7 @@ h1 {
     color:  rgb(95, 208, 103);
     padding-bottom: .8em;
     padding-top: .2em;
-    font-size: 2em;
+    font-size: 1.5em;
     display: inline;
 }
 
@@ -197,14 +202,8 @@ input:focus {
     font-size: 1.2em;
 }
 
-
 a {
     text-decoration: none;
-}
-
-a:hover {
-    color:#51a7e8;
-    background-color: #F5F5F5;
 }
 
 .survey-form  {
@@ -244,6 +243,13 @@ a:hover {
     float:right;
     margin-top: -1.8em;
     margin-right: .8em;
+}
+
+.survey-link p {
+    color: rgb(75,192,103);
+}
+.survey-link p:visited {
+    color: #fff;
 }
 
 @media (max-width: 1100px)    {
