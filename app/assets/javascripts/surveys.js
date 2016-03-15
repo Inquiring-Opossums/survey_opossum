@@ -64,12 +64,23 @@ $("#newQuestion").on("click", ".fa-times", function(e){
 });
 
 $("#newQuestion").on("click", ".fa-caret-up", function(){
-  console.log("MOVE UP: " + $(this).attr("id"));
-});//end check click
+var qClicked = $(this).parent().parent();//this is the outer div of the new question we clicked on
+
+qClicked.insertBefore(qClicked.prev());//litterally insert the thing we clicked on before the previous sibilng element (ie the previous question)
+
+renumberQs();//reorder the numbers so they look nice and keep all their fields in tact.
+
+console.log(qClicked);//print out the PREVIOUS new question.
+});//end up click
 
 $("#newQuestion").on("click", ".fa-caret-down", function(){
-  console.log("MOVE DOWN: " + $(this).attr("id"));
-});//end check click
+  var qClicked = $(this).parent().parent();//this is the outer div of the new question we clicked on
+
+  qClicked.insertAfter(qClicked.next());//this litterally inserts the thing we clicked on after the NEXT sibling in the DOM (ie the next question)
+  renumberQs();//renumber the quesions so they look nice and keep their contents.
+
+  console.log(qClicked);//print out the PREVIOUS new question.
+});//end down click
 
 $("#newSurBtn").on("click", function(){
   console.log("I clicked!");
