@@ -1,5 +1,4 @@
-
-<%= form_for @survey, :url => {:action => "submit"} do |f| %>
+<%= form_for(@survey) do |f| %>
   <% if @survey.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
@@ -13,26 +12,35 @@
 
   <% end %>
 
+
+<div class="special-jumbotron">
   <div class="field">
     <%= f.hidden_field :author_id, value: session[:user_id] %>
   </div>
 
-  <div class="field">
-    <p>Survey: <%=@survey.name%></p>
+<div class="survey-container">
+
+    <div class="info-panel">
+  <div id="survey-name" class="field">
+    <p> <%=@survey.name%></p>
   </div>
 
-  <div class="field">
-    <p>Description: <%=@survey.description%></p>
+  <div id="description" class="field">
+    <p> <%=@survey.description%></p>
   </div>
+  </div>
+
   <%= f.hidden_field :taker_id, :value => @taker.id %>
   <%= f.fields_for :questions do |ff| %>
+
     <div class="question" id="newQuestion">
       	<div class="field">
           <% question = ff.object %>
-          <p><%=question.question_text %></p>
-          <p><%=question.description%></p>
+          <p class="question-text"><%=question.question_text %></p>
+          <p class="question-description"><%=question.description%></p>
           <%= ff.fields_for :answers do |fff|%>
             <% if question.taker_input == "1" %>
+
               <%= label :answers_yes, 'Yes' %><br>
               <%= fff.radio_button :answer, "Yes", :checked => true %><br>
               <%= label :answers_no, 'No' %><br>
@@ -46,7 +54,11 @@
       	</div>
     </div>
   <% end %>
+
   <div class="actions">
     <%= f.submit "Submit Survey" %>
+  </div>
+
+  </div>
   </div>
 <% end %>
