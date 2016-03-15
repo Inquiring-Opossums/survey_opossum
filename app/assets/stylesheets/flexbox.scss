@@ -7,8 +7,54 @@
     padding-left: 3%;
     min-width: 750px;
     width: 100%;
-}
 
+        h1 {
+            text-shadow: center;
+        }
+        a:hover {
+            background-color: rgb(104, 83, 205);
+            color: rgb(75, 192, 103);
+        }
+
+
+//This styles the information when you click Show or right after you create a new survey
+
+
+    .survey-details {
+        font-size: 1.1em;
+        color: #fff;
+        max-width: 600px;
+        text-align: left;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 3%;
+        padding: .2em;
+        text-align: center;
+
+        p {
+            padding: .2em;
+            font-size: 1.1em;
+        }
+
+        #survey-link a{
+            color: rgb(75, 192, 103);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .footer {
+            text-align: center;
+            padding: .5em;
+        }
+        .footer a{
+            text-align: center;
+            color: #fff;
+        }
+        .footer a:hover {
+            color: rgb(75, 192, 103);
+        }
+    }
+}
+//This styles the view for the taker or a survey
 .survey-container {
     margin-top: 25px;
     max-width: 800px;
@@ -50,17 +96,17 @@
     }
 }
 
-.flex-container {
-  /* We first create a flex layout context */
-  display: flex;
-
-  /* Then we define the flow direction and if we allow the items to wrap
-   * Remember this is the same as:
-   * flex-direction: row;
-   * flex-wrap: wrap;
-   */
-  flex-flow: row wrap;
-
-  /* Then we define how is distributed the remaining space */
-  justify-content: space-around;
-}
+// .flex-container {
+//   /* We first create a flex layout context */
+//   display: flex;
+//
+//   /* Then we define the flow direction and if we allow the items to wrap
+//    * Remember this is the same as:
+//    * flex-direction: row;
+//    * flex-wrap: wrap;
+//    */
+//   flex-flow: row wrap;
+//
+//   /* Then we define how is distributed the remaining space */
+//   justify-content: space-around;
+// }

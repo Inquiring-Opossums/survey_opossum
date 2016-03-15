@@ -20,7 +20,7 @@
                       <span class="login-button header-nav-right"><a href= > <%= link_to "Login", login_path %> </a>
                     <% else %>
                       <span class="login-button header-nav-right"><a href= > <%= link_to 'Logout', logout_path, method: :delete %> </a>
-                      <span class="account-button header-nav-right"><a href= > <%= link_to 'Account', new_survey_path %> </a>
+                      <span class="account-button header-nav-right"><a href= > <%= link_to 'Account', new_survey_path unless @skip_link%> </a>
                     <% end %>
                     </span>
               </div>

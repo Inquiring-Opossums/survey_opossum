@@ -1,7 +1,9 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :destroy]
   before_action :at_least_one_question?, only: [:published]
+
+
   # GET /surveys
   # GET /surveys.json
   def index
@@ -18,6 +20,7 @@ class SurveysController < ApplicationController
   end
   # GET /surveys/new
   def new
+    @skip_link = true
     @survey = Survey.new
     @survey.questions.build
     @user = Author.find_by_id(session[:user_id])
@@ -47,12 +50,16 @@ class SurveysController < ApplicationController
   # PATCH/PUT /surveys/1
   # PATCH/PUT /surveys/1.json
   def update
-    if @survey.update(survey_params)
+    if @survey.update(survey_params) && !session[:user_id].nil?
+      @user = Author.find(session[:user_id])
       redirect_to @survey, notice: 'Survey was successfully updated.'
+    elsif session[:user_id].nil?
+      redirect_to root_path, notice: 'Survey was successfully submitted.'
     else
       render :edit
     end
   end
+
   def answers
     @survey = Survey.find(params[:survey_id])
   end
@@ -74,10 +81,13 @@ class SurveysController < ApplicationController
     @survey = Survey.find(params[:survey_id])
     if @survey.published? == true
       @taker = Taker.new
-      @survey = Survey.find(params[:survey_id])
-      @survey.answers.build
+      # @survey.answers.build
+      @survey.questions.each do |q|
+        q.answers.build
+      end
+
     else
-      redirect_to surveys_path, notice: 'This survey has not been published. Get outta here. Go home kid'
+      redirect_to surveys_path, notice: 'This survey has not been published. Please try again later.'
     end
   end
   private
@@ -89,6 +99,7 @@ class SurveysController < ApplicationController
     def set_user
       @user = Author.find(session[:user_id])
     end
+
     def at_least_one_question?
       @survey = Survey.find(params[:survey_id])
       if @survey.questions.count > 0
@@ -97,6 +108,7 @@ class SurveysController < ApplicationController
         redirect_to surveys_path, notice: "You must have at least one question to publish!"
       end
     end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
       params.require(:survey).permit(:author_id, :name, :description, :categories, :published,

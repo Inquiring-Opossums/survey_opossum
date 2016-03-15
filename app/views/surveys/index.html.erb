@@ -23,14 +23,19 @@
         <td><%= survey.description %></td>
         <td><%= survey.categories %></td>
         <% if !session[:user_id].nil?%>
-        <td><% if survey.published? == false %>
-            <p>No</p>
-            <% else %>
-            <p>Yes</p>
-            <%end%>
-        </td>
+          <td><% if survey.published? == false %>
+              <p>No</p>
+              <% else %>
+              <p>Yes</p>
+              <%end%>
+            </td>
         <td><%= link_to 'Show', survey %></td>
         <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
+          <% if survey.published? == true %>
+            <td><%= link_to 'View Answers', survey_answers_path(survey) %>
+          <% else %>
+            <td>No Answers</td>
+          <% end %>
         <% else %>
         <td><%= link_to 'take survey', survey_take_path(survey) %></td>
         <%end%>
