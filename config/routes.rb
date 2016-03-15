@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get :take
       patch :take
       get :answers
+      patch :submit
   end
   resources :authors
 

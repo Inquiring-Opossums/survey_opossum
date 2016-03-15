@@ -1,5 +1,5 @@
 
-<%= form_for(@survey) do |f| %>
+<%= form_for @survey, :url => {:action => "submit"} do |f| %>
   <% if @survey.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>

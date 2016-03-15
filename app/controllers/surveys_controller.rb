@@ -85,11 +85,20 @@ class SurveysController < ApplicationController
       @survey.questions.each do |q|
         q.answers.build
       end
-
     else
       redirect_to surveys_path, notice: 'This survey has not been published. Please try again later.'
     end
   end
+
+  def submit
+    @survey = Survey.find(params[:survey_id])
+    if @survey.save(survey_params)
+      redirect_to @survey, notice: 'Survey was successfully plop.'
+    else
+      render :new
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
