@@ -20,6 +20,7 @@ class SurveysController < ApplicationController
   end
   # GET /surveys/new
   def new
+    @skip_link = true
     @survey = Survey.new
     @survey.questions.build
     @user = Author.find_by_id(session[:user_id])
@@ -99,6 +100,7 @@ class SurveysController < ApplicationController
         redirect_to surveys_path, notice: "You must have at least one question to publish!"
       end
     end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
       params.require(:survey).permit(:author_id, :name, :description, :categories, :published,
