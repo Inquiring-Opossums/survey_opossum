@@ -11,13 +11,13 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
+//=require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
-//this shows the new survey stuff when you click the new survey button.
-$("#newSurBtn").on("click", function(){
-  console.log("I clicked!");
-  $("#newSurvey").removeclass("off");
-});
+// //this shows the new survey stuff when you click the new survey button.
+// $("#newSurBtn").on("click", function(){
+//   console.log("I clicked!");
+//   $("#newSurvey").removeclass("off");
+// });
