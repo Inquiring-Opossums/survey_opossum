@@ -2,6 +2,8 @@ class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :at_least_one_question?, only: [:published]
+
+
   # GET /surveys
   # GET /surveys.json
   def index
