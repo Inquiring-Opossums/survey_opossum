@@ -11,21 +11,13 @@ Inquisitive Opossums is a Survey application that allows the user a variety of o
 * Model and query relational databases
 * Create a functional, pleasant and efficient user experience
 * Provide a secure site using authentication and authorization
-* Provide data structure diagram https://www.lucidchart.com/invitations/accept/0e5a3ab9-fe00-4c96-b6df-219367f655fe
-* Generate workflow diagram(enter link here)
-<<<<<<< HEAD
-* Push to Heroku https://powerful-atoll-60409.herokuapp.com/surveys/new
-=======
-* Push to Heroku https://powerful-atoll-60409.herokuapp.com/
->>>>>>> master
+* [Provide data structure diagram](https://www.lucidchart.com/invitations/accept/0e5a3ab9-fe00-4c96-b6df-219367f655fe)
+* [Generate workflow diagram](https://www.lucidchart.com/invitations/accept/4235ad44-ea88-451e-a644-82c9cdaec46b)
+* [Push to Heroku](https://powerful-atoll-60409.herokuapp.com)
 * [Our Github Repository](https://github.com/Inquiring-Opossums/survey_opossum.git)
-<br>
 
-Demonstration Video
-(http://img.youtube.com/vi/cq3D0Lwda44/0.jpg)](https://www.youtube.com/watch?v=cq3D0Lwda44)
-
-<br>
-
+<!-- Demonstration Video
+(http://img.youtube.com/vi/cq3D0Lwda44/0.jpg)](https://www.youtube.com/watch?v=cq3D0Lwda44) -->
 ** App Requirements **
 * User should be able to sign up and create surveys, enter questions to be asked, possible answers, an other assorted details.
 * Once survey is complete, the author can offer a link for anyone to take the survey.  When complete, author can look back and see compiled answers.
