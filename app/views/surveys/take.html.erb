@@ -2,4 +2,8 @@
 
 <%= render 'take' %>
 
-<%= link_to 'Back', new_author_path %>
+<% if !session[:user_id].nil? %>
+  <%= link_to 'Back', survey_path(@survey) %>
+<% else %>
+  <%= link_to 'Back', new_author_path %>
+<% end %>

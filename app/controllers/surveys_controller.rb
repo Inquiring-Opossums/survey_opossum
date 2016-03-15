@@ -1,6 +1,6 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :destroy]
   before_action :at_least_one_question?, only: [:published]
 
 
@@ -50,12 +50,16 @@ class SurveysController < ApplicationController
   # PATCH/PUT /surveys/1
   # PATCH/PUT /surveys/1.json
   def update
-    if @survey.update(survey_params)
+    if @survey.update(survey_params) && !session[:user_id].nil?
+      @user = Author.find(session[:user_id])
       redirect_to @survey, notice: 'Survey was successfully updated.'
+    elsif session[:user_id].nil?
+      redirect_to root_path, notice: 'Survey was successfully submitted.'
     else
       render :edit
     end
   end
+
   def answers
     @survey = Survey.find(params[:survey_id])
   end
@@ -81,7 +85,7 @@ class SurveysController < ApplicationController
       @survey.questions.each do |q|
         q.answers.build
       end
-      
+
     else
       redirect_to surveys_path, notice: 'This survey has not been published. Please try again later.'
     end
@@ -95,6 +99,7 @@ class SurveysController < ApplicationController
     def set_user
       @user = Author.find(session[:user_id])
     end
+
     def at_least_one_question?
       @survey = Survey.find(params[:survey_id])
       if @survey.questions.count > 0
