@@ -107,6 +107,10 @@ input:focus {
     border: 2px solid $trellogreen;
 }
 
+.show-surveys a:visited {
+    color: green;
+}
+
 .field{
     font-size: 1.2em;
     font-color: #fff;
@@ -173,25 +177,6 @@ input:focus {
 
 
 }
-//
-// #email {
-//     margin-left: 4em;
-//     border: 1px solid black;
-//     }
-//
-// #password {
-//     margin-bottom: 2em;
-//     margin-left: 1.6em;
-// }
-// #alert {
-//     margin-left: 2em;
-//     color: red;
-// }
-
-// .footer {
-//     margin-left: 5em;
-//     text-align: center;
-// }
 
 .login-title h1{
     margin-top: 2em;

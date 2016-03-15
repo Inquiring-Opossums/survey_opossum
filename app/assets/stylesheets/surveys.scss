@@ -30,6 +30,9 @@ tbody{
     a{
       color: #fff;
     }
+    a:visited {
+        color:rgb(75, 192, 103);
+    }
   }
 }//end table
 //==========================================================================================
@@ -195,8 +198,4 @@ $headerGray: #F5F5F5;
 //     text-align: center;
 //     margin-bottom: 25px;
 //   }
-
-  label{
-    color: black;
-  }
 //}

@@ -29,11 +29,10 @@ var renumberQs = function(){
     console.log("this is the question desc = " + $(qList[i]).find(".Qdesc").val());
 
     //console.log("I GET THIS FROM THE HTML =" + tempString)
-    //"Question # "+(i+1)
 
     var tempIndex = tempString.indexOf("<");//get the index of where the tag starts
     var tempString2 = tempString.slice(tempIndex+1);//this should cut out the displayed old number only.
-    //DO IT AGAIN TO GET THE INDEX OF THE SECOND OPEN TAG!
+    //DO IT AGAIN TO GET THE INDEX OF THE SECOND (CORRECT) OPEN TAG!
     tempIndex = tempString2.indexOf("<");
     var tempString3 = tempString2.slice(tempIndex);//this should cut out the displayed old number only.
 
@@ -56,7 +55,7 @@ var renumberQs = function(){
 };//end of renumberQs
 
 
-//IT IS IMPORTANT TO REMEMBER THAT WHEN SELECTING GENERATED ELEMENTS YOU HAVE TO, AND I MEAN MF'IN MUST, TARGET THE CONTAINING ELEMENT AND USE THE SECONDARY SELECTOR INSIDE THE .on() FUNCTION TO GRAB THE THING YOU ACTUALLY WANT.
+//IT IS IMPORTANT TO REMEMBER THAT WHEN SELECTING GENERATED ELEMENTS YOU HAVE TO, AND I MEAN MF'IN MUST, TARGET THE CONTAINING ELEMENT AND USE THE SECONDARY SELECTOR INSIDE THE .on() FUNCTION TO GRAB THE THING YOU ACTUALLY WANT. thx tori.
 $("#newQuestion").on("click", ".fa-times", function(e){
   console.log("DELETE: " + $(this).parent().parent().parent().attr("id"));
   $(this).parent().parent().parent().remove();//removes the currently selected element (which happens to be the entire new question div)
@@ -79,19 +78,17 @@ $("#newSurBtn").on("click", function(){
   //$("#surveySubmit").removeClass("off");
 });
 
-//I cant figure out where to put this so it works. So I just embedded it in the HTML itself.>
 $("#newQBtn").on("click", function(){
 
   console.log("I clicked for question " + questionCount);
-
 
   $("#newQuestion").append("<div class='field Question' id='Q"+ questionCount +"'><span class='newQL'>Question #"+ (questionCount+1)+"<select name='survey[questions_attributes]["+ questionCount +"][taker_input]' id='survey_questions_attributes_'" + questionCount +"_taker_input'><option value=''>Question type</option><option value='1'>Yes or No</option><option value='2'>Short Answer</option><option value='3'>Long Answer</option></select></span><span class='newQMid'><input placeholder='text' type='text' name='survey[questions_attributes]["+ questionCount +"][question_text]' id='survey_questions_attributes_" + questionCount + "_question_text' class='Qtext'><input placeholder='description' type='text' name='survey[questions_attributes]["+ questionCount +"][description]' id='survey_questions_attributes_"+ questionCount +"_description' class='Qdesc'></span><span class='newQR'><input name='survey[questions_attributes][" + questionCount + "][_destroy]' type='hidden' value='" + questionCount + "'><i class='fa fa-caret-up fa-2x'id='UP"+questionCount+"'></i><span id='DELETE"+questionCount+"'><i class='fa fa-times fa-2x'></i></span><i class='fa fa-caret-down fa-2x'id='DOWN"+questionCount+"'></i></span></div>");
 
 
   questionCount++
 
-  var position = $("body").prop('scrollHeight');
-   $("body").scrollTop(position);
+  var position = $("#newQuestion").prop('scrollHeight');
+   $("#newQuestion").scrollTop(position);
 
    //renumberQs();
 
